@@ -5,6 +5,13 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'
 require 'capybara/rails'
+require 'vcr'
+
+VCR.configure do |c|
+  c.cassette_library_dir = "fixtures/vcr"
+  c.hook_into :webmock
+  c.filter_sensitive_data('<NOPE>') { ENV['bestbuy_api'] }
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
