@@ -24,7 +24,7 @@ RSpec.describe "user can search stores by zipcode" do
       expect(page).to have_content("DENVER")
       expect(page).to have_content("3.45")
       expect(page).to have_content("303-270-9189")
-      expect(page).to have_content("Big Box")
+      expect(page).to have_content("Mobile SAS")
     end
   end
 end
