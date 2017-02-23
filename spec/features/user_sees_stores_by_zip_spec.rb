@@ -10,10 +10,11 @@ RSpec.describe "user can search stores by zipcode" do
       click_on "Search"
   # And I should see stores within 25 miles of 80202
   # And I should see a message that says "16 Total Stores"
-      expect(page).to have_content("16 Total Stores")
+      page.find('h1').has_content?("16 Total Stores")
+      save_and_open_page
   # And I should see exactly 10 results
       stores = Array.new
-      stores = find('#parent ul').all('li')
+      stores = find('#stores ul').all('li')
 
       expect(stores.size).to eq(10)
   # Then my current path should be "/search" (ignoring params)
