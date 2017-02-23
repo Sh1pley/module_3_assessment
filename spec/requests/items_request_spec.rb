@@ -27,4 +27,22 @@ RSpec.describe '/api/v1/items' do
     expect(parsed_items.first).to_not have_key "updated_at"
   end
 
+  it 'should respond with new item and 201 response after a post request' do
+    params = {
+      name: "Test",
+      description: "Moar Test!"
+    }
+    post "/api/v1/items", params
+
+    expect(response._status_code).to be(201)
+
+    item = JSON.parse(response.body)
+
+    expect(item).to have_key "id"
+    expect(item).to have_key "name"
+    expect(item).to have_key "description"
+    
+    expect(item).to_not have_key "created_at"
+    expect(item).to_not have_key "updated_at"
+  end
 end
