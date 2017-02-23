@@ -6,4 +6,11 @@ RSpec.describe '/api/v1/items' do
 
     expect(response).to be_success
   end
+
+  it 'should contain specific items' do
+    get '/api/v1/items'
+
+    items = response.body
+    binding.pry
+  end
 end
