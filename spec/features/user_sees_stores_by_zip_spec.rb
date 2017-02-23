@@ -6,7 +6,7 @@ RSpec.describe "user can search stores by zipcode" do
   # When I visit "/"
       visit "/"
   # And I fill in a search box with "80202" and click "search"
-      fill_in "q", with: "80202"
+      fill_in "search", with: "80202"
       click_on "Search"
   # And I should see stores within 25 miles of 80202
   # And I should see a message that says "16 Total Stores"

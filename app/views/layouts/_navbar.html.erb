@@ -7,6 +7,10 @@
       <span class="icon-bar"></span>
     </button>
     <a class="navbar-brand" href="/">Storedom</a>
+    <%= form_tag :search, method: "get" do %>
+      <%= text_field_tag :search %>
+      <%= submit_tag "Search" %>
+    <% end %>
   </div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     

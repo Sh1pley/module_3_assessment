@@ -1,12 +1,6 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-        <div class="search">
-      <% form_tag search_index_path, :method => "get" do %>
-          <%= text_field_tag :search, params[:search] %>
-          <%= submit_tag "Search", :name => nil %>
-      <% end %>
-        </div>
       <h1><%= @items.count %> Items</h1>
     </div>
   </div>
