@@ -25,4 +25,7 @@ group :development, :test do
   gem "pry", :require => "pry"
   gem 'vcr'
   gem 'webmock'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'faker'
 end
