@@ -1,8 +1,6 @@
 require 'rails_helper'
 
-# As a user
-# And I should see the long name, city, distance,
-# phone number and store type for each of the 10 results
+
 
 describe "user can search stores by zipcode" do
   it 'will return results from default distance limited to 10 per page' do
@@ -19,6 +17,10 @@ describe "user can search stores by zipcode" do
 
   expect(stores.size).to eq(10)
 # Then my current path should be "/search" (ignoring params)
+  expect(current_path).to be(search_path)
+# And I should see the long name, city, distance,
+# phone number and store type for each of the 10 results
+  expect(page).to have_content()
 
   end
 end
