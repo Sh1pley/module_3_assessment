@@ -30,7 +30,7 @@ RSpec.describe '/api/v1/item/1' do
   it 'should respond with 204 for DELETE request' do
     delete "/api/v1/items/1"
 
-    expect(response._status_code).to be("204")
+    expect(response._status_code).to be(204)
   end
 
 end
