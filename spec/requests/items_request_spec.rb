@@ -26,4 +26,5 @@ RSpec.describe '/api/v1/items' do
     expect(parsed_items.first).to_not have_key "created_at"
     expect(parsed_items.first).to_not have_key "updated_at"
   end
+
 end
