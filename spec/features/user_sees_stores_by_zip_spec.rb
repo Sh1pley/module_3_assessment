@@ -11,14 +11,13 @@ RSpec.describe "user can search stores by zipcode" do
   # And I should see stores within 25 miles of 80202
   # And I should see a message that says "16 Total Stores"
       page.find('h1').has_content?("16 Total Stores")
-      save_and_open_page
   # And I should see exactly 10 results
       stores = Array.new
-      stores = find('#stores ul').all('li')
+      stores = page.all('ul#stores')
 
       expect(stores.size).to eq(10)
   # Then my current path should be "/search" (ignoring params)
-      expect(current_path).to be(search_path)
+      expect(current_path).to eq(search_path)
   # And I should see the long name, city, distance,
   # phone number and store type for each of the 10 results
       expect(page).to have_content("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")

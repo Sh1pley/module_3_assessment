@@ -4,6 +4,5 @@ class SearchController < ApplicationController
     parsed = JSON.parse(response.body)
     @stores = Store.make(parsed['stores'])
     @total = parsed['total']
-    # binding.pry
   end
 end
