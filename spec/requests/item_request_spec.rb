@@ -17,7 +17,7 @@ RSpec.describe '/api/v1/item/1' do
     item = response.body
     expect(item).to be_a(String)
 
-    parsed_item = JSON.parse(items)
+    parsed_item = JSON.parse(item)
     
     expect(parsed_item).to have_key "id"
     expect(parsed_item).to have_key "name"
